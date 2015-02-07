@@ -8,7 +8,7 @@ class SpacesController < ApplicationController
   end
 
   def new
-    
+    @space = Space.new
   end
 
 end

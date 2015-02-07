@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Add simple form
+gem 'simple_form'
+
 # Add pagination with kaminari
 gem 'kaminari'
 
