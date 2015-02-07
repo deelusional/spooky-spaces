@@ -7,7 +7,9 @@ gem 'rails', '4.0.1'
 gem 'pg'
 
 # Use SCSS for stylesheets
+gem 'bootstrap-sass', '~> 3.3.0'
 gem 'sass-rails', '~> 4.0.0'
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -28,6 +30,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :doc do
+
+  # Add recommended autoprefixer
+  gem 'autoprefixer-rails'
+
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
