@@ -1,1 +1,9 @@
-<h1>Spooky Spaces!</h1>
+<% @spaces.each do |space| %>
+  <div>
+    <h1><%= space.name %></h1><br />
+    <i><%= space.address %></i><br />
+    <p><%= space.description %></p><br />
+  </div>
+
+  <hr />
+<% end %>
