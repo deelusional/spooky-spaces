@@ -3,7 +3,11 @@
     <h1><%= space.name %></h1>
     <i><%= space.address %></i><br /><br />
     <p><%= space.description %></p><br />
-  </div>
+
+    <% if space.user.present? %>
+      <small><%= space.user.email %></small>
+    <% end %>
+  </div> 
 
   <hr />
 <% end %>
