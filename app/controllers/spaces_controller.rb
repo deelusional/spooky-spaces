@@ -17,6 +17,10 @@ class SpacesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @space = Space.find(params[:id])
+  end
+
   private
 
   def space_params
