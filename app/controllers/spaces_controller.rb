@@ -25,6 +25,12 @@ class SpacesController < ApplicationController
     @space = Space.find(params[:id])
   end
 
+  def update
+    @space = Space.find(params[:id])
+    @space.update_attributes(space_params)
+    redirect_to root_path
+  end
+
   private
 
   def space_params
