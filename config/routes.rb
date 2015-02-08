@@ -1,5 +1,6 @@
 SpookySpaces::Application.routes.draw do
   
+  devise_for :users
   root 'spaces#index'
 
   resources :spaces

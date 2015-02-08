@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Add devise
+gem 'devise', '>= 3.2.4'
+
 # Add simple form
 gem 'simple_form'
 
