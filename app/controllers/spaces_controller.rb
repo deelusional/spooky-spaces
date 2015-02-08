@@ -31,6 +31,12 @@ class SpacesController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @space = Space.find(params[:id])
+    @space.destroy
+    redirect_to root_path
+  end
+
   private
 
   def space_params
