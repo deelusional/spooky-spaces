@@ -3,4 +3,7 @@
 <i><%= @space.address %></i>
 <br /><br />
 <p><%= @space.description %></p>
+<div class="pull-right">
+  <%= link_to 'Edit', edit_space_path(@space), :class => 'btn btn-primary' %>
+</div>
 </div>
