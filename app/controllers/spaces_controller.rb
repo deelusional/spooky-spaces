@@ -13,8 +13,12 @@ class SpacesController < ApplicationController
   end
 
   def create
-    current_user.spaces.create(space_params)
-    redirect_to root_path
+    @space = current_user.spaces.create(space_params)
+    if @space.valid?
+      redirect_to root_path
+    else
+      render :new, :status => :unprocessable_entity
+    end
   end
 
   def show
@@ -37,7 +41,11 @@ class SpacesController < ApplicationController
     end
 
     @space.update_attributes(space_params)
-    redirect_to root_path
+    if @space.valid?
+      redirect_to root_path
+    else
+      render :edit, :status => :unprocessable_entity  
+    end
   end
 
   def destroy
