@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+# Add Figaro
+gem 'figaro', '>= 1.0.0'
+
+# Add Geocoder
+gem 'geocoder'
+
 # Add devise
 gem 'devise', '>= 3.2.4'
 
