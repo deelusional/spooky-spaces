@@ -1,5 +1,5 @@
 class SpacesController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create, :edit, :update]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
   
   def index
     @spaces = Space.all
@@ -42,6 +42,10 @@ class SpacesController < ApplicationController
 
   def destroy
     @space = Space.find(params[:id])
+    if @space.user != current_user
+      return render :text => 'Not Allowed', :status => :forbidden
+    end
+
     @space.destroy
     redirect_to root_path
   end
