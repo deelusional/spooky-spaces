@@ -1,5 +1,5 @@
 class SpacesController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create, :edit]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update]
   
   def index
     @spaces = Space.all
@@ -23,10 +23,19 @@ class SpacesController < ApplicationController
 
   def edit
     @space = Space.find(params[:id])
+
+    if @space.user != current_user
+      return render :text => 'Not Allowed', :status => :forbidden
+    end
   end
 
   def update
     @space = Space.find(params[:id])
+    
+    if @space.user != current_user
+      return render :text => 'Not Allowed', :status => :forbidden
+    end
+
     @space.update_attributes(space_params)
     redirect_to root_path
   end
