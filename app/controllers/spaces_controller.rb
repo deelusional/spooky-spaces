@@ -23,6 +23,7 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @comment = Comment.new
   end
 
   def edit
