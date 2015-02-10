@@ -5,7 +5,7 @@ class SpacesController < ApplicationController
     @spaces = Space.all
   end
   def index
-    @spaces = Space.order(:name).page(params[:page]).per(4)
+    @spaces = Space.order(:name).page(params[:page]).per(5)
   end
 
   def new
