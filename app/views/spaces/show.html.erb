@@ -36,7 +36,8 @@
      
     
       <div class="clear"></div>
-      <%= simple_form_for @comment, :url => '#' do |f| %>
+      
+      <%= simple_form_for @comment, :url => space_comments_path(@space) do |f| %>
         <%= f.input :message %>
         <%= f.input :rating %>
         <br />
@@ -48,5 +49,17 @@
     <% end %>
   </div>
 </div>
+
+<h1>Comments</h1>
+
+<% @space.comments.each do |comment| %>
+  <div>
+    <blockquote>
+      <b><%= comment.rating %></b> -
+        <%= comment.message %>
+      <small><%= comment.user.email %></small>
+    </blockquote>
+  </div>
+<% end %>
 
 

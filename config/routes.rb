@@ -1,9 +1,10 @@
 SpookySpaces::Application.routes.draw do
-  
   devise_for :users
   root 'spaces#index'
+  resources :spaces do
+    resources :comments, :only => :create
+  end
 
-  resources :spaces
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
