@@ -40,6 +40,8 @@
         <%= link_to 'Destroy', space_path(@space), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'}, :class => 'btn btn-primary' %>
     <% end %>
 <br /><br />
+
+<h1 class="pull-left">Comments</h1>
       <!-- Button trigger modal -->
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Add a comment
@@ -72,7 +74,7 @@
   </div>
 </div>
 
-<h1>Comments</h1>
+
 
 <% @space.comments.each do |comment| %>
   <div>
