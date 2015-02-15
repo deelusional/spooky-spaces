@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Add photos with carrierwave
+gem 'carrierwave'
+
 # Add Figaro
 gem 'figaro', '>= 1.0.0'
 

@@ -3,6 +3,7 @@ SpookySpaces::Application.routes.draw do
   root 'spaces#index'
   resources :spaces do
     resources :comments, :only => :create
+    resources :photos, :only => :create
   end
 
 
