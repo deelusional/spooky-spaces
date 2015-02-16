@@ -1,9 +1,7 @@
 class SpacesController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
   
-  def index
-    @spaces = Space.all
-  end
+  
   def index
     @spaces = Space.order(:name).page(params[:page]).per(5)
   end
@@ -24,6 +22,7 @@ class SpacesController < ApplicationController
   def show
     @space = Space.find(params[:id])
     @comment = Comment.new
+    @photo = Photo.new
   end
 
   def edit

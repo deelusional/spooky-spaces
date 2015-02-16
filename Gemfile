@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Configuring CarrierWave with S3
+gem 'fog', '~> 1.3.1'
+
 # Add photos with carrierwave
 gem 'carrierwave'
 
