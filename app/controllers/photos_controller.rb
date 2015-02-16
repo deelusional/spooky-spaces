@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 	
 	def create
-      @space. Space.find(params[:space_id])
+      @space = Space.find(params[:space_id])
       @space.photos.create(photo_params)
 	end
 
@@ -10,6 +10,6 @@ class PhotosController < ApplicationController
 	def photo_params
 		params.require(:photo).permit(:picture, :caption)
 	end
-	
+
 end
 
