@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215220404) do
+ActiveRecord::Schema.define(version: 20150219011428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,10 @@ ActiveRecord::Schema.define(version: 20150215220404) do
     t.text     "space_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture"
   end
+
+  add_index "photos", ["picture"], name: "index_photos_on_picture", using: :btree
 
   create_table "spaces", force: true do |t|
     t.string   "name"
