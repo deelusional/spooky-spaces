@@ -9,12 +9,18 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <%= image_tag 'slider1.jpg' %>
+      <%= image_tag 'slider1.jpg', :class => 'img-responsive' %>
       <div class="carousel-caption">
         Stay the night without being bothered!
       </div>
     </div>
-    ...
+    <div class="item">
+      <%= image_tag 'slider2.jpg', :class => 'img-responsive' %>
+      <div class="carousel-caption">
+        Be haunted after a few drinks...
+    </div>
+    
+
   </div>
 
   <!-- Controls -->
@@ -24,6 +30,7 @@
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
+</div>
 </div>
 
 <% @spaces.each do |space| %>
@@ -52,7 +59,8 @@
   <% end %>
 <% end %>
 
+
+
 <br class="clr">
 <div class="text-center">
 <%= paginate @spaces %>
-</div>
