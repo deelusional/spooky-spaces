@@ -16,11 +16,14 @@
   <div class="clear"></div>
 </div>
 
+<br /><br />
 <h1 class="text-center">My Comments</h1>
+<br /><br />
 
 <% @user.comments.each do |comment| %>
   
   <div class="col-xs-12 col-sm-6">
+
   <blockquote>
     <% if comment.humanized_rating.present? %>
       <b><%= comment.humanized_rating %></b> -
